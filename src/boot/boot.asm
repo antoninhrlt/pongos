@@ -30,6 +30,11 @@ start:
     ; Retrieve the boot unit
     mov [bootdrv], dl
 
+    ; Clear the screen
+    mov ah, 0x00
+    mov al, 0x03
+    int 0x10
+
     ; Print message
     mov si, hello_msg
     call print_str
